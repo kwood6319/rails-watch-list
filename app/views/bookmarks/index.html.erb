@@ -1,0 +1,10 @@
+<h1> Hello from the bookmarks#index </h1>
+
+
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li> <%= link_to bookmark.name, bookmark_path(bookmark) %> </li>
+  <% end %>
+</ul>
+
+<%# <%= link_to "New bookmark", new_bookmar_path, class: "btn btn-primary" %>

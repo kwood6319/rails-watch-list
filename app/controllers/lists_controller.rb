@@ -14,10 +14,6 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    # @bookmark = Bookmark.find(params[:bookmark_id])
-    # @list.bookmark = @bookmark
-    # @movie = Movie.find(params[:movie_id])
-    # @list.movie = @movie
     if @list.save
       redirect_to list_path(@list)
     else
