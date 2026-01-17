@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <nav class="navbar bg-body-secondary">
+      <form class="container-fluid justify-content-end">
+        <%= link_to "All lists", lists_path, class: "btn btn-outline-primary me-3" %>
+        <button class="btn btn-outline-success me-2" type="button">Add a new list</button>
+      </form>
+    </nav>
+
+  <%= image_tag "movie_theater.avif", alt: "Movie theater" %>
+
+
     <div class="container">
       <%= yield %>
     </div>
