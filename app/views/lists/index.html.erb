@@ -1,11 +1,14 @@
-<%# <%= image_tag "movie_theater.avif", alt: "Movie theater" width: 200%>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dlrsvessm/image/upload/v1768912160/movie_theater_bkdyxa.avif)">
+
+</div>
 
 <h1> All Lists </h1>
 
-<ul>
+<div class="cards">
   <% @lists.each do |list| %>
-    <li> <%= link_to list.name, list_path(list) %> </li>
-  <% end %>
-</ul>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, crop: :fill%>;')">
+      <%= link_to list.name, list_path(list) %>
 
-<%= link_to "New list", new_list_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
