@@ -1,6 +1,40 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dlrsvessm/image/upload/v1768912160/movie_theater_bkdyxa.avif)">
 
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <% (@movies.drop(1).count - 1).times do |i| %>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<%=i + 1%>" aria-label="slide <%= i + 1%>"></button>
+    <% end %>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100 max-height-500" src="<%=@movies.first.poster_url%>" alt="<%=@movies.first.title%>">
+      <div class="carousel-caption d-none d-md-block">
+        <h3><%= @movies.first.title %></h5>
+        <p><%= @movies.first.rating %> ☆ </p>
+      </div>
+    </div>
+    <% @movies.drop(1).each do |movie| %>
+      <div class="carousel-item">
+        <img class="d-block w-100 max-height-500" src="<%=movie.poster_url%>" alt="<%=movie.title%>">
+        <div class="carousel-caption d-none d-md-block bg-secondary.bg-gradient">
+          <h3><%= movie.title %></h5>
+          <p><%= movie.rating %> ☆</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+
+
 
 <h1> All Lists </h1>
 
