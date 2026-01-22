@@ -1,9 +1,18 @@
-<h1> Make a new list </h1>
+<nav class="navbar bg-body-secondary">
+      <form class="container-fluid justify-content-end">
+        <%= link_to "All lists", lists_path, class: "btn btn-outline-primary me-3" %>
+        <%= link_to "New list", new_list_path, class:"btn btn-outline-success me-2" %>
+      </form>
+    </nav>
 
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
 
-<%= link_to "All lists", lists_path, class: "btn btn-outline-danger" %>
+  <h1> Make a new list </h1>
+
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+
+</div>

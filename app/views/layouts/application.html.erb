@@ -11,16 +11,6 @@
   </head>
 
   <body>
-    <nav class="navbar bg-body-secondary">
-      <form class="container-fluid justify-content-end">
-        <%= link_to "All lists", lists_path, class: "btn btn-outline-primary me-3" %>
-        <%= link_to "New list", new_list_path, class:"btn btn-outline-success me-2" %>
-      </form>
-    </nav>
-
-
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>
