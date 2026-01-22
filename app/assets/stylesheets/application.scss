@@ -10,3 +10,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.max-height-500 {
+  max-height: 500px;
+  height: auto; /* Ensures aspect ratio is maintained */
+  object-fit: cover; /* Useful if the image container has a fixed height */
+}
+
+.max-height-250 {
+  max-height: 250px;
+  height: auto; /* Ensures aspect ratio is maintained */
+  object-fit: cover; /* Useful if the image container has a fixed height */
+}
